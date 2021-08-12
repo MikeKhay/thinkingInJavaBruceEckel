@@ -1,22 +1,20 @@
-package chapter17.containers.task13;
+package chapter17.containers.task15;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
 
 public class TestDifferentMap {
     public static void main(String[] args) {
 
-        String s = "E:\\Pomouka\\thinkingInJavaBruceEckel\\src\\java\\chapter17\\containers\\task13\\text.txt";
+        String s = "E:\\Pomouka\\thinkingInJavaBruceEckel\\src\\java\\chapter17\\containers\\task15\\text.txt";
         String[] strings = readFile(s);
 //        System.out.println(Arrays.toString(strings));
         countWord(strings);
     }
 
     public static void countWord(String[] array){
-        Map m1 = new HashMap();
-//        AssociativeArray<String, Integer> m1 = new AssociativeArray<>(array.length);
+        SlowMap<String, Integer> m1 = new SlowMap<>();
+
         for (int i = 0; i < array.length; i++){
             if (m1.get(array[i]) == null){
                 m1.put(array[i], 1);
